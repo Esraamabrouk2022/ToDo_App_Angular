@@ -1,0 +1,18 @@
+/* header.component.css */
+.label-task {
+    font-weight: bold;
+}
+
+.input-task {
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 10px;
+}
+
+.button-task {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}

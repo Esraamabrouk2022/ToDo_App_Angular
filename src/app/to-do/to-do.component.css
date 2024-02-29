@@ -1,0 +1,37 @@
+/* todo.component.css */
+table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  button {
+    padding: 6px 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .edit-button {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .delete-button {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .complete-button {
+    background-color: #008CBA;
+    color: white;
+  }
+  /* to-do.component.css */
+.completed {
+  text-decoration: line-through; /* Apply line-through effect */
+}
+
+  

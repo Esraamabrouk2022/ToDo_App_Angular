@@ -1,0 +1,32 @@
+<!-- todo.component.html -->
+<table style="width: 100%; border-collapse: collapse;">
+  <thead>
+      <tr>
+          <th style="border: 1px solid #ddd; padding: 8px;">Task Name</th>
+          <th style="border: 1px solid #ddd; padding: 8px;">Creator</th>
+          <th style="border: 1px solid #ddd; padding: 8px;">Creation Date</th>
+          <th style="border: 1px solid #ddd; padding: 8px;">Action</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let task of tasks; let i = index" [ngClass]="{ 'completed': task.completed }">
+          <td style="border: 1px solid #ddd; padding: 8px;">
+              <ng-container *ngIf="!task.editMode; else editModeTemplate">
+                  {{ task.name }}
+              </ng-container>
+              <ng-template #editModeTemplate>
+                  <input type="text" [(ngModel)]="tasks[i].name">
+              </ng-template>
+          </td>
+          <td style="border: 1px solid #ddd; padding: 8px;">{{ task.creator }}</td>
+          <td style="border: 1px solid #ddd; padding: 8px;">{{ task.creationDate | date:'medium' }}</td>
+          <td style="border: 1px solid #ddd; padding: 8px;">
+              <button (click)="toggleEditMode(task)" style="background-color: #4CAF50; color: white; padding: 6px 10px; border: none; cursor: pointer;">
+                  {{ task.editMode ? 'Save' : 'Edit' }}
+              </button>
+              <button (click)="deleteTask(task)" style="background-color: #f44336; color: white; padding: 6px 10px; border: none; cursor: pointer;">Delete</button>
+              <button (click)="completeTask(task)" style="background-color: #008CBA; color: white; padding: 6px 10px; border: none; cursor: pointer;">Complete</button>
+          </td>
+      </tr>
+  </tbody>
+</table>
